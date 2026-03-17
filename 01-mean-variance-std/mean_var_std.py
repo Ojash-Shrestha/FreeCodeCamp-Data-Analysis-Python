@@ -1,6 +1,24 @@
 import numpy as np
 
 def calculate(lst):
+    """
+    Computes the mean, variance, standard deviation, max, min, and sum
+    of a 3x3 matrix.
+
+    Args:
+        lst (list): A list containing exactly 9 numerical elements to be
+                    reshaped into a 3x3 NumPy array.
+
+    Returns:
+        dict: A dictionary where each key represents a statistic.
+              The values are lists containing three sub-elements:
+              - Index 0: Statistics along the columns (axis 0).
+              - Index 1: Statistics along the rows (axis 1).
+              - Index 2: The statistic for the flattened matrix.
+
+    Raises:
+        ValueError: If `lst` does not contain exactly nine elements.
+    """
     if len(lst) != 9:
         raise ValueError("List must contain nine numbers.")
 
