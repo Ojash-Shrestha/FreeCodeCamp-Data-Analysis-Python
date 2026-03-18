@@ -1,4 +1,4 @@
-# FreeCodeCamp-Data-Analysis-Python
+# FreeCodeCamp-Data-Analysis-with-Python
 ## About this repository
 5 data analysis projects completed as part of the freeCodeCamp
 Scientific Computing with Python certification. Each project
