@@ -15,6 +15,16 @@ df['gluc'] = (df['gluc'] > 1).astype(int)
 
 # 4
 def draw_cat_plot():
+    """
+    Creates a categorical plot that shows the counts of good and bad outcomes
+    for various health indicators, split by cardiovascular disease status.
+    The function transforms the data into long format and groups it to
+    visualize the distribution of cholesterol, glucose, smoking, alcohol,
+    activity, and overweight status across cardio=0 and cardio=1 patients.
+
+    Returns:
+        matplotlib.figure.Figure: The figure object containing the categorical plot.
+    """
     # 5
     df_cat = pd.melt(df, id_vars=['cardio'], value_vars=['cholesterol', 'gluc', 'smoke', 'alco', 'active', 'overweight'])
 
@@ -40,6 +50,17 @@ def draw_cat_plot():
 
 # 10
 def draw_heat_map():
+    """
+    Cleans the medical data by filtering out blood pressure anomalies and
+    extreme height/weight outliers, then generates a correlation heatmap.
+    Correlations are calculated across all 14 variables including age,
+    blood pressure, cholesterol, and lifestyle factors. The heatmap uses
+    a mask to hide the upper triangle for better readability and displays
+    the correlation coefficients between all variables.
+
+    Returns:
+        matplotlib.figure.Figure: The figure object containing the heatmap.
+    """
     # 11
     df_heat = df[
     (df['ap_lo'] <= df['ap_hi']) &
