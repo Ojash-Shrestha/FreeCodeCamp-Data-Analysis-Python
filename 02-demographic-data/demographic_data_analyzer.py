@@ -2,6 +2,33 @@ import pandas as pd
 
 
 def calculate_demographic_data(print_data=True):
+    """
+        Analyzes a census dataset to extract various demographic insights,
+        including race representation, education levels, and income statistics
+        across different countries.
+
+        Args:
+            print_data (bool, optional): If True, prints the calculated demographic
+                                         statistics to the console. Defaults to True.
+
+        Returns:
+            dict: A dictionary containing the following keys:
+                - 'race_count': Pandas Series with counts of each race.
+                - 'average_age_men': Average age of males (rounded to 1 decimal).
+                - 'percentage_bachelors': Percentage of people with a Bachelor's degree.
+                - 'higher_education_rich': Percentage of people with advanced education
+                  (Bachelors, Masters, Doctorate) earning >50K.
+                - 'lower_education_rich': Percentage of people without advanced education
+                  earning >50K.
+                - 'min_work_hours': Minimum hours worked per week.
+                - 'rich_percentage': Percentage of people working the minimum hours
+                  who earn >50K.
+                - 'highest_earning_country': The country with the highest percentage
+                  of people earning >50K.
+                - 'highest_earning_country_percentage': The percentage of rich people
+                  in the highest earning country.
+                - 'top_IN_occupation': The most common occupation for high earners in India.
+        """
     # Read data from file
     df = pd.read_csv("adult.data.csv")
 
