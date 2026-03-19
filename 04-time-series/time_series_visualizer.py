@@ -14,6 +14,14 @@ df = df[
 ]
 
 def draw_line_plot():
+    """
+    Visualizes the daily freeCodeCamp forum page views as a continuous line
+    to identify overall traffic growth from May 2016 to December 2019.
+
+    Returns:
+        matplotlib.figure.Figure: The figure object containing a line plot
+                                  with title and axis labels.
+    """
     # Draw line plot
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.plot(df.index, df['value'])
@@ -26,6 +34,15 @@ def draw_line_plot():
     return fig
 
 def draw_bar_plot():
+    """
+    Creates a grouped bar chart showing the average daily page views for
+    each month, grouped by year, to compare monthly performance over time.
+    The data is grouped by year and month, then unstacked to allow for
+    side-by-side comparison with a legend representing all twelve months.
+
+    Returns:
+        matplotlib.figure.Figure: The figure object containing the bar plot.
+    """
     # Copy and modify data for monthly bar plot
     df_bar = df.copy()
     df_bar['year'] = df_bar.index.year
@@ -48,6 +65,18 @@ def draw_bar_plot():
     return fig
 
 def draw_box_plot():
+    """
+    Generates two side-by-side box plots using Seaborn to analyze data
+    distribution, trends, and seasonality.
+    - The Year-wise box plot shows how the data is distributed within each
+      year, identifying the upward trend over time.
+    - The Month-wise box plot shows the distribution across all years for
+      each month, identifying seasonal patterns.
+
+    Returns:
+        matplotlib.figure.Figure: The figure object containing two
+                                  side-by-side subplots.
+    """
     # Prepare data for box plots (this part is done!)
     df_box = df.copy()
     df_box.reset_index(inplace=True)
